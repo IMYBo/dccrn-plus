@@ -1,0 +1,421 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>DCCRN+: Channel-wise Subband DCCRN with SNR Estimation for Speech Enhancement</title>
+  <link rel="stylesheet" type="text/css" href="./stylesheets/github-light.css">
+</head>
+
+<body>
+  <article>
+    <header>
+      <h1>Samples from "DCCRN+: Channel-wise Subband DCCRN with SNR Estimation for Speech Enhancement</h1>
+    </header>
+  </article>
+
+  <div><b>Authors:</b>Shubo Lv, Yanxin Hu, Shimin Zhang, Lei Xie
+  </div>
+  <hr style="height:1px;border:none;border-top:1px solid #555555; width:130%">
+  <h2>Part1: DNS test set</h2>
+  <h3>Samples on no reverberation set</h3>
+  <style type="text/css">
+    .tg {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .tg td {
+      border-bottom-width: 1px;
+      border-color: black;
+      border-style: solid;
+      border-top-width: 1px;
+      border-width: 0px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      overflow: hidden;
+      padding: 10px 5px;
+      word-break: normal;
+    }
+
+    .tg th {
+      border-bottom-width: 1px;
+      border-color: black;
+      border-style: solid;
+      border-top-width: 1px;
+      border-width: 0px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      overflow: hidden;
+      padding: 10px 5px;
+      word-break: normal;
+    }
+
+    .tg .tg-c3ow {
+      border-color: inherit;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: top
+    }
+
+    .tg .tg-0pky {
+      border-color: inherit;
+      text-align: left;
+      vertical-align: top
+    }
+
+    .tg .tg-pcvp {
+      border-color: inherit;
+      text-align: left;
+      vertical-align: top
+    }
+
+    .tg .tg-ihkz {
+      border-color: inherit;
+      text-align: center;
+      vertical-align: top
+    }
+
+    .tg .tg-7kms {
+      border-color: inherit;
+      font-family: Arial, Helvetica, sans-serif !important;
+      ;
+      text-align: center;
+      vertical-align: top
+    }
+  </style>
+  <table class="tg" style="undefined;table-layout: fixed; width: 493px">
+    <colgroup>
+      <col style="width: 85px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="tg-c3ow">Model</th>
+        <th class="tg-c3ow">Sample 1</th>
+        <th class="tg-c3ow">Sample 2</th>
+        <th class="tg-c3ow">Sample 3</th>
+        <th class="tg-c3ow">Sample 4</th>
+        <th class="tg-c3ow">Sample 5</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-0pky">Noisy</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/noisy/clnsp246_door_83878_0_snr15_tl-26_fileid_213.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/noisy/clnsp241_washer_235366_2_snr17_tl-24_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/noisy/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/noisy/clnsp157_water_125964_2_snr9_tl-32_fileid_243.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/noisy/clnsp213_bhxP0WJ17ko_snr9_tl-33_fileid_250.wav"></audio></td>
+	  </tr>
+	  
+      <tr>
+	    <td class="tg-0pky">Clean</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/clean/clnsp246_door_83878_0_snr15_tl-26_fileid_213.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/clean/clnsp241_washer_235366_2_snr17_tl-24_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/clean/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/clean/clnsp157_water_125964_2_snr9_tl-32_fileid_243.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/clean/clnsp213_bhxP0WJ17ko_snr9_tl-33_fileid_250.wav"></audio></td>
+	  </tr>
+	  
+      <tr>
+        <td class="tg-pcvp">DCCRN</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_non_causal/clnsp246_door_83878_0_snr15_tl-26_fileid_213.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_non_causal/clnsp241_washer_235366_2_snr17_tl-24_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_non_causal/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_non_causal/clnsp157_water_125964_2_snr9_tl-32_fileid_243.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_non_causal/clnsp213_bhxP0WJ17ko_snr9_tl-33_fileid_250.wav"></audio></td>
+	  </tr>
+      <tr>
+        <td class="tg-pcvp">Subband DCCRN</td>	
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband/clnsp246_door_83878_0_snr15_tl-26_fileid_213.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband/clnsp241_washer_235366_2_snr17_tl-24_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband/clnsp157_water_125964_2_snr9_tl-32_fileid_243.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband/clnsp213_bhxP0WJ17ko_snr9_tl-33_fileid_250.wav"></audio></td>
+      </tr>
+      <tr>
+        <td class="tg-pcvp">+Complex TF-LSTM</td>		
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_v2/clnsp246_door_83878_0_snr15_tl-26_fileid_213.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_v2/clnsp241_washer_235366_2_snr17_tl-24_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_v2/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_v2/clnsp157_water_125964_2_snr9_tl-32_fileid_243.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_v2/clnsp213_bhxP0WJ17ko_snr9_tl-33_fileid_250.wav"></audio></td>
+      </tr>
+      <tr>
+        <td class="tg-pcvp">+Convolution Pathway</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_skipcnn/clnsp246_door_83878_0_snr15_tl-26_fileid_213.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_skipcnn/clnsp241_washer_235366_2_snr17_tl-24_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_skipcnn/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_skipcnn/clnsp157_water_125964_2_snr9_tl-32_fileid_243.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_skipcnn/clnsp213_bhxP0WJ17ko_snr9_tl-33_fileid_250.wav"></audio></td>
+	  </tr>
+	  <tr>
+        <td class="tg-pcvp">+Post-processing</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_skipcnn_snr_esti/clnsp246_door_83878_0_snr15_tl-26_fileid_213.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_skipcnn_snr_esti/clnsp241_washer_235366_2_snr17_tl-24_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_skipcnn_snr_esti/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_skipcnn_snr_esti/clnsp157_water_125964_2_snr9_tl-32_fileid_243.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/no_reverb/conv2d_multiband_complex_dplstm_skipcnn_snr_esti/clnsp213_bhxP0WJ17ko_snr9_tl-33_fileid_250.wav"></audio></td>
+	  </tr>
+    </tbody>
+  </table>
+  <hr style="height:1px;border:none;border-top:1px solid #555555; width:130%">
+  <h3>Samples on reverberation set</h3>
+  <table class="tg" style="undefined;table-layout: fixed; width: 493px">
+    <colgroup>
+      <col style="width: 85px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="tg-c3ow">Model</th>
+        <th class="tg-c3ow">Sample 1</th>
+        <th class="tg-c3ow">Sample 2</th>
+        <th class="tg-c3ow">Sample 3</th>
+        <th class="tg-c3ow">Sample 4</th>
+        <th class="tg-c3ow">Sample 5</th>
+      </tr>
+    </thead>
+    <tbody> 
+      <tr>
+        <td class="tg-0pky">Noisy</td>	
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/noisy/clnsp430_babble_188218_23_snr8_tl-22_fileid_280.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/noisy/clnsp414_pa_kcBIPQJM_snr5_tl-23_fileid_145.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/noisy/clnsp57_bus_84241_3_snr2_tl-30_fileid_300.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/noisy/clnsp267_wind_407022_1_snr3_tl-25_fileid_57.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/noisy/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+	  </tr>			
+      <tr>
+        <td class="tg-0pky">Clean</td>	
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/clean/clnsp430_babble_188218_23_snr8_tl-22_fileid_280.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/clean/clnsp414_pa_kcBIPQJM_snr5_tl-23_fileid_145.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/clean/clnsp57_bus_84241_3_snr2_tl-30_fileid_300.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/clean/clnsp267_wind_407022_1_snr3_tl-25_fileid_57.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/clean/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+	  </tr>			
+      <tr>
+        <td class="tg-0pky">DCCRN</td>	
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_non_causal/clnsp430_babble_188218_23_snr8_tl-22_fileid_280.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_non_causal/clnsp414_pa_kcBIPQJM_snr5_tl-23_fileid_145.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_non_causal/clnsp57_bus_84241_3_snr2_tl-30_fileid_300.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_non_causal/clnsp267_wind_407022_1_snr3_tl-25_fileid_57.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_non_causal/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+	  </tr>
+      <tr>
+        <td class="tg-0pky">Subband DCCRN</td>	
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband/clnsp430_babble_188218_23_snr8_tl-22_fileid_280.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband/clnsp414_pa_kcBIPQJM_snr5_tl-23_fileid_145.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband/clnsp57_bus_84241_3_snr2_tl-30_fileid_300.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband/clnsp267_wind_407022_1_snr3_tl-25_fileid_57.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+	  </tr>
+      <tr>
+        <td class="tg-0pky">+Complex TF-LSTM</td>	
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_v2/clnsp430_babble_188218_23_snr8_tl-22_fileid_280.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_v2/clnsp414_pa_kcBIPQJM_snr5_tl-23_fileid_145.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_v2/clnsp57_bus_84241_3_snr2_tl-30_fileid_300.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_v2/clnsp267_wind_407022_1_snr3_tl-25_fileid_57.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_v2/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+	  </tr>			
+      <tr>
+        <td class="tg-0pky">+Convolution Pathway</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_skipcnn/clnsp430_babble_188218_23_snr8_tl-22_fileid_280.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_skipcnn/clnsp414_pa_kcBIPQJM_snr5_tl-23_fileid_145.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_skipcnn/clnsp57_bus_84241_3_snr2_tl-30_fileid_300.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_skipcnn/clnsp267_wind_407022_1_snr3_tl-25_fileid_57.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_skipcnn/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+	  </tr>
+      <tr>
+        <td class="tg-0pky">+SNR Estimator</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_skipcnn_snr_esti/clnsp430_babble_188218_23_snr8_tl-22_fileid_280.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_skipcnn_snr_esti/clnsp414_pa_kcBIPQJM_snr5_tl-23_fileid_145.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_skipcnn_snr_esti/clnsp57_bus_84241_3_snr2_tl-30_fileid_300.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_skipcnn_snr_esti/clnsp267_wind_407022_1_snr3_tl-25_fileid_57.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/simu/with_reverb/conv2d_multiband_complex_dplstm_skipcnn_snr_esti/clnsp198_bus_56903_0_snr0_tl-32_fileid_101.wav"></audio></td>
+      </tr>
+	  </tbody>
+	</table>
+
+  <hr style="height:1px;border:none;border-top:1px solid #555555; width:130%">
+  <h2>Part2: DNS blind set</h2>
+  <h3>Samples on emotional set</h3> 
+  <table class="tg" style="undefined;table-layout: fixed; width: 493px">
+    <colgroup>
+      <col style="width: 85px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="tg-c3ow">Model</th>
+        <th class="tg-c3ow">Sample 1</th>
+        <th class="tg-c3ow">Sample 2</th>
+        <th class="tg-c3ow">Sample 3</th>
+        <th class="tg-c3ow">Sample 4</th>
+        <th class="tg-c3ow">Sample 5</th>
+      </tr>
+    </thead>	
+	<tbody>
+      <tr>
+        <td class="tg-0pky">Noisy</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/noisy/ms_realrec_emotional_stationary_headset_A1EK8YNHZHTW1J_fan_far_laughter_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/noisy/ms_realrec_emotional_earphone_A25UMKJS7PC293_clatter_near_crying_fileid_3.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/noisy/ms_realrec_emotional_stationary_laptopmic_A3VBNWON5XOUVS_fan_near_sx293_12.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/noisy/ms_realrec_emotional_openspeaker_ASEW6NZHLI41K_openingchipspacket_near_laugh_fileid_4.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/noisy/ms_realrec_emotional_openspeaker_ASEW6NZHLI41K_kitchenvessels_near_shouting_fileid_12.wav"></audio></td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">DCCRN</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn/ms_realrec_emotional_stationary_headset_A1EK8YNHZHTW1J_fan_far_laughter_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn/ms_realrec_emotional_earphone_A25UMKJS7PC293_clatter_near_crying_fileid_3.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn/ms_realrec_emotional_stationary_laptopmic_A3VBNWON5XOUVS_fan_near_sx293_12.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn/ms_realrec_emotional_openspeaker_ASEW6NZHLI41K_openingchipspacket_near_laugh_fileid_4.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn/ms_realrec_emotional_openspeaker_ASEW6NZHLI41K_kitchenvessels_near_shouting_fileid_12.wav"></audio></td>
+      </tr>
+
+      <tr>
+        <td class="tg-0pky">DCCRN+</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn_plus/ms_realrec_emotional_stationary_headset_A1EK8YNHZHTW1J_fan_far_laughter_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn_plus/ms_realrec_emotional_earphone_A25UMKJS7PC293_clatter_near_crying_fileid_3.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn_plus/ms_realrec_emotional_stationary_laptopmic_A3VBNWON5XOUVS_fan_near_sx293_12.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn_plus/ms_realrec_emotional_openspeaker_ASEW6NZHLI41K_openingchipspacket_near_laugh_fileid_4.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn_plus/ms_realrec_emotional_openspeaker_ASEW6NZHLI41K_kitchenvessels_near_shouting_fileid_12.wav"></audio></td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">DCCRN+(with post-processing)</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn_plus_pp/ms_realrec_emotional_stationary_headset_A1EK8YNHZHTW1J_fan_far_laughter_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn_plus_pp/ms_realrec_emotional_earphone_A25UMKJS7PC293_clatter_near_crying_fileid_3.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn_plus_pp/ms_realrec_emotional_stationary_laptopmic_A3VBNWON5XOUVS_fan_near_sx293_12.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn_plus_pp/ms_realrec_emotional_openspeaker_ASEW6NZHLI41K_openingchipspacket_near_laugh_fileid_4.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/emotion/dccrn_plus_pp/ms_realrec_emotional_openspeaker_ASEW6NZHLI41K_kitchenvessels_near_shouting_fileid_12.wav"></audio></td>
+      </tr>
+    </tbody>
+    </table>
+  <hr style="height:1px;border:none;border-top:1px solid #555555; width:130%">
+  <h3>Samples on musical set</h3>
+  <table class="tg" style="undefined;table-layout: fixed; width: 493px">
+    <colgroup>
+      <col style="width: 85px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="tg-c3ow">Model</th>
+        <th class="tg-c3ow">Sample 1</th>
+        <th class="tg-c3ow">Sample 2</th>
+        <th class="tg-c3ow">Sample 3</th>
+        <th class="tg-c3ow">Sample 4</th>
+        <th class="tg-c3ow">Sample 5</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-0pky">Noisy</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/noisy/ms_realrec_musical_laptop_A2ZK5I1MDWNPRU_far_fileid_9-01.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/noisy/ms_realrec_musical_laptop_microphone_A2UTUL6ZW905WI_drums_far_fileid_7.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/noisy/ms_realrec_musical_laptop_A2ZK5I1MDWNPRU_far_fileid_9-02.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/noisy/ms_realrec_musical_laptop_microphone_A2UTUL6ZW905WI_piano_near_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/noisy/ms_realrec_musical_macbookpro_XMQ6Y5VEXRUU_piano_far_fileid_5.wav"></audio></td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">DCCRN</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn/ms_realrec_musical_laptop_A2ZK5I1MDWNPRU_far_fileid_9-01.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn/ms_realrec_musical_laptop_microphone_A2UTUL6ZW905WI_drums_far_fileid_7.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn/ms_realrec_musical_laptop_A2ZK5I1MDWNPRU_far_fileid_9-02.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn/ms_realrec_musical_laptop_microphone_A2UTUL6ZW905WI_piano_near_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn/ms_realrec_musical_macbookpro_XMQ6Y5VEXRUU_piano_far_fileid_5.wav"></audio></td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">DCCRN+</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn_plus/ms_realrec_musical_laptop_A2ZK5I1MDWNPRU_far_fileid_9-01.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn_plus/ms_realrec_musical_laptop_microphone_A2UTUL6ZW905WI_drums_far_fileid_7.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn_plus/ms_realrec_musical_laptop_A2ZK5I1MDWNPRU_far_fileid_9-02.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn_plus/ms_realrec_musical_laptop_microphone_A2UTUL6ZW905WI_piano_near_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn_plus/ms_realrec_musical_macbookpro_XMQ6Y5VEXRUU_piano_far_fileid_5.wav"></audio></td>
+      </tr>				
+
+      <tr>
+        <td class="tg-0pky">DCCRN+(with post-processing)</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn_plus_pp/ms_realrec_musical_laptop_A2ZK5I1MDWNPRU_far_fileid_9-01.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn_plus_pp/ms_realrec_musical_laptop_microphone_A2UTUL6ZW905WI_drums_far_fileid_7.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn_plus_pp/ms_realrec_musical_laptop_A2ZK5I1MDWNPRU_far_fileid_9-02.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn_plus_pp/ms_realrec_musical_laptop_microphone_A2UTUL6ZW905WI_piano_near_fileid_2.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/musical/dccrn_plus_pp/ms_realrec_musical_macbookpro_XMQ6Y5VEXRUU_piano_far_fileid_5.wav"></audio></td>
+      </tr>
+    </tbody>
+  </table>
+  <hr style="height:1px;border:none;border-top:1px solid #555555; width:130%">
+  <h3>Samples on real recording set</h3>
+  <table class="tg" style="undefined;table-layout: fixed; width: 493px">
+    <colgroup>
+      <col style="width: 85px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="tg-c3ow">Model</th>
+        <th class="tg-c3ow">Sample 1</th>
+        <th class="tg-c3ow">Sample 2</th>
+        <th class="tg-c3ow">Sample 3</th>
+        <th class="tg-c3ow">Sample 4</th>
+        <th class="tg-c3ow">Sample 5</th>
+      </tr>
+    </thead>
+    <tbody>  
+      <tr>
+        <td class="tg-0pky">Noisy</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/noisy/ms_realrec_english_stationary_laptop_microphone_A2JA19C4Y5JZD3_airconditioner_far_fileid_1.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/noisy/ms_realrec_english_laptop_A3ER6R66WYYS9R_vehicles_horn_far_10_12.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/noisy/ms_realrec_english_Laptop_microphone_A1Q7VWUBIJOK17_Running_Water_near_fileid_6.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/noisy/ms_realrec_english_stationary_speaker_A1XUZFDVKP95VC_Fan_Far_fileid_5.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/noisy/ms_realrec_english_stationary_openspeaker_ASEW6NZHLI41K_fan_far_fileid_11.wav"></audio></td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">DCCRN</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn/ms_realrec_english_stationary_laptop_microphone_A2JA19C4Y5JZD3_airconditioner_far_fileid_1.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn/ms_realrec_english_laptop_A3ER6R66WYYS9R_vehicles_horn_far_10_12.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn/ms_realrec_english_Laptop_microphone_A1Q7VWUBIJOK17_Running_Water_near_fileid_6.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn/ms_realrec_english_stationary_speaker_A1XUZFDVKP95VC_Fan_Far_fileid_5.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn/ms_realrec_english_stationary_openspeaker_ASEW6NZHLI41K_fan_far_fileid_11.wav"></audio></td>
+      </tr>
+
+      <tr>
+        <td class="tg-0pky">DCCRN+</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn_plus/ms_realrec_english_stationary_laptop_microphone_A2JA19C4Y5JZD3_airconditioner_far_fileid_1.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn_plus/ms_realrec_english_laptop_A3ER6R66WYYS9R_vehicles_horn_far_10_12.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn_plus/ms_realrec_english_Laptop_microphone_A1Q7VWUBIJOK17_Running_Water_near_fileid_6.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn_plus/ms_realrec_english_stationary_speaker_A1XUZFDVKP95VC_Fan_Far_fileid_5.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn_plus/ms_realrec_english_stationary_openspeaker_ASEW6NZHLI41K_fan_far_fileid_11.wav"></audio></td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">DCCRN+(with post-processing)</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn_plus_pp/ms_realrec_english_stationary_laptop_microphone_A2JA19C4Y5JZD3_airconditioner_far_fileid_1.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn_plus_pp/ms_realrec_english_laptop_A3ER6R66WYYS9R_vehicles_horn_far_10_12.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn_plus_pp/ms_realrec_english_Laptop_microphone_A1Q7VWUBIJOK17_Running_Water_near_fileid_6.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn_plus_pp/ms_realrec_english_stationary_speaker_A1XUZFDVKP95VC_Fan_Far_fileid_5.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./samples/real/realrec/dccrn_plus_pp/ms_realrec_english_stationary_openspeaker_ASEW6NZHLI41K_fan_far_fileid_11.wav"></audio></td>
+      </tr>
+    </tbody>
+  </table>
+
