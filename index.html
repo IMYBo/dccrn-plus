@@ -14,11 +14,13 @@
     </header>
   </article>
 
-  <div><b>Authors:</b>Shubo Lv, Yanxin Hu, Shimin Zhang, Lei Xie
+  <div><b>Authors:</b>Shubo Lv, Yanxin Hu, Shimin Zhang and Lei Xie
+  </div>
+  <div><b>Abstract:</b>Deep complex convolution recurrent network (DCCRN), which extends CRN with complex structure, has achieved superior performance in MOS evaluation in Interspeech 2020 deep noise suppression challenge (DNS2020). This paper further extends DCCRN with the following significant revisions. We first extend the model to sub-band processing where the bands are split and merged by learnable neural network filters instead of engineered FIR filters, leading to a faster noise suppressor trained in an end-to-end manner. Then the LSTM is further substituted with a complex TF-LSTM to better model temporal dependencies along both time and frequency axes. Moreover, instead of simply concatenating the output of each encoder layer to the input of the corresponding decoder layer, we use convolution blocks to first aggregate essential information from the encoder output before feeding it to the decoder layers. We specifically formulate the decoder with an extra a priori SNR estimation module to maintain good speech quality while removing noise. Finally a post-processing module is adopted to further suppress the unnatural residual noise. The new model, named DCCRN+, has surpassed the original DCCRN as well as several competitive models in terms of PESQ and DNSMOS, and has achieved superior performance in the new Interspeech 2021 DNS challenge. 
   </div>
   <hr style="height:1px;border:none;border-top:1px solid #555555; width:130%">
   <h2>Part1: DNS test set</h2>
-  <h3>Samples on no reverberation set</h3>
+  <h3>Samples on non reverberation set</h3>
   <style type="text/css">
     .tg {
       border-collapse: collapse;
